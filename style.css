@@ -1,0 +1,203 @@
+/*Linkdin Shayan Shah*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+}
+
+body {
+  background: url(./images/background.png),
+    linear-gradient(to right bottom, #0e0a6b, #06053e);
+  background-size: cover;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.Home {
+  position: relative;
+  min-height: 100vh;
+  background-image: url(./images/shape.png);
+  background-size: cover;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 0 90px;
+  overflow: hidden;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  font-size: 24px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 90px;
+  opacity: 0;
+  animation: to_bottom 1s ease forwards;
+}
+
+header img {
+  width: 100px;
+  height: 100px;
+}
+
+header nav a {
+  font-size: 24px;
+  color: white;
+  margin-left: 78px;
+  transition: 0.3s;
+}
+header nav .active,
+header nav a:hover {
+  color: #0ba1ca;
+}
+
+.text-box {
+  width: 50%;
+  z-index: 99;
+}
+
+.text-box h1 {
+  color: #0ba1ca;
+  font-size: 85px;
+  animation: to_right 1s ease forwards 1.3s;
+}
+
+.text-box h1:nth-child(2) {
+  color: black;
+  font-size: 65px;
+  animation-delay: 1.5s;
+}
+
+.text-box p {
+  margin: 40px 0;
+  font-size: 22px;
+  width: 70%;
+  color: #878787;
+  animation: to_right 1s ease forwards 1.7s;
+}
+
+.btn-box {
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  position: relative;
+  padding: 12px 30px;
+  font-size: 22px;
+  border: 2px solid #0ba1ca;
+  background: transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+  animation: to_right 1s ease forwards 1.9s;
+}
+.btn:hover,
+.btn:nth-child(2) {
+  color: white;
+  background-color: #0ba1ca;
+  box-shadow: 0 0 15px #0ba1ca;
+}
+.btn:nth-child(2):hover {
+  color: black;
+  background: transparent;
+  box-shadow: none;
+}
+
+.Home img {
+  position: absolute;
+  height: 100%;
+  pointer-events: none;
+  right: 50px;
+  bottom: 0;
+}
+
+.text-box * {
+  opacity: 0;
+}
+
+.text-box span {
+  opacity: 1;
+}
+@keyframes to_bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes to_right {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes person {
+  0%,
+  100% {
+    transform: translateY(30px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+.person {
+  transform: translateY(30px);
+  opacity: 0;
+  animation: fade 1.5s ease forwards, person 8s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(368deg);
+  }
+}
+
+.rocket {
+  opacity: 0;
+  animation: fade 1.5s ease forwards 1s, rotate 8s linear infinite;
+  transform-origin: 56% 53%;
+}
+
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 280%;
+  margin-top: -30%;
+  background-image: url(./stars.png);
+  background-position: center;
+  background-size: cover;
+  opacity: 0;
+  animation: fade 1.5s ease forwards 2s, rotate 25s linear infinite;
+}
